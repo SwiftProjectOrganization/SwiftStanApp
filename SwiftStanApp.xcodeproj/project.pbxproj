@@ -3,20 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AA0000000000000000000040 /* SwiftStanAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000020 /* SwiftStanAppApp.swift */; };
 		AA0000000000000000000041 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000021 /* ContentView.swift */; };
 		D43DEAE22FF17FC40038834F /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = D43DEAE12FF17FC40038834F /* OpenAPIRuntime */; };
-		D43DEAFA2FF180ED0038834F /* ServerSettings 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF82FF180ED0038834F /* ServerSettings 2.swift */; };
+		D43DEAFA2FF180ED0038834F /* ServerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF82FF180ED0038834F /* ServerSettings.swift */; };
 		D43DEAFB2FF180ED0038834F /* Csv2JsonIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAE82FF180ED0038834F /* Csv2JsonIntent.swift */; };
 		D43DEAFC2FF180ED0038834F /* LaplaceIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAEB2FF180ED0038834F /* LaplaceIntent.swift */; };
 		D43DEAFD2FF180ED0038834F /* SampleModelIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF02FF180ED0038834F /* SampleModelIntent.swift */; };
 		D43DEAFE2FF180ED0038834F /* PathfinderIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAED2FF180ED0038834F /* PathfinderIntent.swift */; };
 		D43DEAFF2FF180ED0038834F /* GenerateStanCodeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAEA2FF180ED0038834F /* GenerateStanCodeIntent.swift */; };
-		D43DEB002FF180ED0038834F /* StanClient 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF92FF180ED0038834F /* StanClient 2.swift */; };
+		D43DEB002FF180ED0038834F /* StanClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF92FF180ED0038834F /* StanClient.swift */; };
 		D43DEB012FF180ED0038834F /* CompileModelIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAE72FF180ED0038834F /* CompileModelIntent.swift */; };
 		D43DEB022FF180ED0038834F /* Alist2DslIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAE62FF180ED0038834F /* Alist2DslIntent.swift */; };
 		D43DEB032FF180ED0038834F /* GeneratedQuantitiesIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAE92FF180ED0038834F /* GeneratedQuantitiesIntent.swift */; };
@@ -27,8 +27,6 @@
 		D43DEB082FF180ED0038834F /* StanIntentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF12FF180ED0038834F /* StanIntentError.swift */; };
 		D43DEB092FF180ED0038834F /* StanToAlistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF32FF180ED0038834F /* StanToAlistIntent.swift */; };
 		D43DEB0A2FF180ED0038834F /* OptimizeModelIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAEC2FF180ED0038834F /* OptimizeModelIntent.swift */; };
-		D43DEB0B2FF180ED0038834F /* openapi-generator-config 2.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D43DEAF72FF180ED0038834F /* openapi-generator-config 2.yaml */; };
-		D43DEB0C2FF180ED0038834F /* openapi 2.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D43DEAF62FF180ED0038834F /* openapi 2.yaml */; };
 		D43DEB0E2FF18A060038834F /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = D43DEB0D2FF18A060038834F /* OpenAPIURLSession */; };
 		D43DEB112FF18A6A0038834F /* openapi-generator-config.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D43DEB102FF18A6A0038834F /* openapi-generator-config.yaml */; };
 		D43DEB122FF18A6A0038834F /* openapi.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D43DEB0F2FF18A6A0038834F /* openapi.yaml */; };
@@ -54,10 +52,8 @@
 		D43DEAF22FF180ED0038834F /* StansummaryIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StansummaryIntent.swift; sourceTree = "<group>"; };
 		D43DEAF32FF180ED0038834F /* StanToAlistIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StanToAlistIntent.swift; sourceTree = "<group>"; };
 		D43DEAF42FF180ED0038834F /* SwiftStanShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStanShortcuts.swift; sourceTree = "<group>"; };
-		D43DEAF62FF180ED0038834F /* openapi 2.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi 2.yaml"; sourceTree = "<group>"; };
-		D43DEAF72FF180ED0038834F /* openapi-generator-config 2.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config 2.yaml"; sourceTree = "<group>"; };
-		D43DEAF82FF180ED0038834F /* ServerSettings 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServerSettings 2.swift"; sourceTree = "<group>"; };
-		D43DEAF92FF180ED0038834F /* StanClient 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StanClient 2.swift"; sourceTree = "<group>"; };
+		D43DEAF82FF180ED0038834F /* ServerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerSettings.swift; sourceTree = "<group>"; };
+		D43DEAF92FF180ED0038834F /* StanClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StanClient.swift; sourceTree = "<group>"; };
 		D43DEB0F2FF18A6A0038834F /* openapi.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = openapi.yaml; sourceTree = "<group>"; };
 		D43DEB102FF18A6A0038834F /* openapi-generator-config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,24 +94,14 @@
 			children = (
 				D43DEB0F2FF18A6A0038834F /* openapi.yaml */,
 				D43DEB102FF18A6A0038834F /* openapi-generator-config.yaml */,
-				D43DEAF52FF180ED0038834F /* Intents 2 */,
-				D43DEAF62FF180ED0038834F /* openapi 2.yaml */,
-				D43DEAF72FF180ED0038834F /* openapi-generator-config 2.yaml */,
-				D43DEAF82FF180ED0038834F /* ServerSettings 2.swift */,
-				D43DEAF92FF180ED0038834F /* StanClient 2.swift */,
+				D43DEAF52FF180ED0038834F /* Intents */,
+				D43DEAF82FF180ED0038834F /* ServerSettings.swift */,
+				D43DEAF92FF180ED0038834F /* StanClient.swift */,
 				AA0000000000000000000020 /* SwiftStanAppApp.swift */,
 				AA0000000000000000000021 /* ContentView.swift */,
-				AA0000000000000000000006 /* Intents */,
 				AA0000000000000000000030 /* SwiftStanApp.entitlements */,
 			);
 			path = SwiftStanApp;
-			sourceTree = "<group>";
-		};
-		AA0000000000000000000006 /* Intents */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Intents;
 			sourceTree = "<group>";
 		};
 		AA0000000000000000000007 /* Packages */ = {
@@ -125,7 +111,7 @@
 			name = Packages;
 			sourceTree = "<group>";
 		};
-		D43DEAF52FF180ED0038834F /* Intents 2 */ = {
+		D43DEAF52FF180ED0038834F /* Intents */ = {
 			isa = PBXGroup;
 			children = (
 				D43DEAE62FF180ED0038834F /* Alist2DslIntent.swift */,
@@ -144,7 +130,7 @@
 				D43DEAF32FF180ED0038834F /* StanToAlistIntent.swift */,
 				D43DEAF42FF180ED0038834F /* SwiftStanShortcuts.swift */,
 			);
-			path = "Intents 2";
+			path = Intents;
 			sourceTree = "<group>";
 		};
 		D468767C2FEF31E7002F0FD1 /* Frameworks */ = {
@@ -205,7 +191,6 @@
 			);
 			mainGroup = AA0000000000000000000004;
 			packageReferences = (
-				D43DEA7E2FF0BC610038834F /* XCLocalSwiftPackageReference "../SwiftStan" */,
 				D43DEADD2FF17F9C0038834F /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
 				D43DEAE02FF17FC40038834F /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
 				D43DEAE32FF180690038834F /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
@@ -226,8 +211,6 @@
 			files = (
 				D43DEB112FF18A6A0038834F /* openapi-generator-config.yaml in Resources */,
 				D43DEB122FF18A6A0038834F /* openapi.yaml in Resources */,
-				D43DEB0B2FF180ED0038834F /* openapi-generator-config 2.yaml in Resources */,
-				D43DEB0C2FF180ED0038834F /* openapi 2.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,13 +243,13 @@
 			files = (
 				AA0000000000000000000040 /* SwiftStanAppApp.swift in Sources */,
 				AA0000000000000000000041 /* ContentView.swift in Sources */,
-				D43DEAFA2FF180ED0038834F /* ServerSettings 2.swift in Sources */,
+				D43DEAFA2FF180ED0038834F /* ServerSettings.swift in Sources */,
 				D43DEAFB2FF180ED0038834F /* Csv2JsonIntent.swift in Sources */,
 				D43DEAFC2FF180ED0038834F /* LaplaceIntent.swift in Sources */,
 				D43DEAFD2FF180ED0038834F /* SampleModelIntent.swift in Sources */,
 				D43DEAFE2FF180ED0038834F /* PathfinderIntent.swift in Sources */,
 				D43DEAFF2FF180ED0038834F /* GenerateStanCodeIntent.swift in Sources */,
-				D43DEB002FF180ED0038834F /* StanClient 2.swift in Sources */,
+				D43DEB002FF180ED0038834F /* StanClient.swift in Sources */,
 				D43DEB012FF180ED0038834F /* CompileModelIntent.swift in Sources */,
 				D43DEB022FF180ED0038834F /* Alist2DslIntent.swift in Sources */,
 				D43DEB032FF180ED0038834F /* GeneratedQuantitiesIntent.swift in Sources */,
@@ -488,13 +471,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		D43DEA7E2FF0BC610038834F /* XCLocalSwiftPackageReference "../SwiftStan" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../SwiftStan;
-		};
-/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCRemoteSwiftPackageReference section */
 		D43DEADD2FF17F9C0038834F /* XCRemoteSwiftPackageReference "swift-openapi-generator" */ = {
