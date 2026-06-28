@@ -24,10 +24,10 @@ struct SwiftStanShortcuts: AppShortcutsProvider {
       shortTitle: "Stancode",
       systemImageName: "doc.text")
     AppShortcut(
-      intent: StanToAlistIntent(),
-      phrases: ["Convert Stan to alist with \(.applicationName)"],
-      shortTitle: "Stan2alist",
-      systemImageName: "arrow.uturn.backward")
+      intent: Csv2JsonIntent(),
+      phrases: ["Convert \(.applicationName) CSV to JSON"],
+      shortTitle: "CSV→JSON",
+      systemImageName: "doc.badge.arrow.up")
     AppShortcut(
       intent: OptimizeModelIntent(),
       phrases: ["Optimize \(.applicationName) model"],
@@ -53,20 +53,5 @@ struct SwiftStanShortcuts: AppShortcutsProvider {
       phrases: ["Summarize \(.applicationName) samples"],
       shortTitle: "Summary",
       systemImageName: "list.bullet.rectangle")
-    AppShortcut(
-      intent: Csv2JsonIntent(),
-      phrases: ["Convert \(.applicationName) CSV to JSON"],
-      shortTitle: "CSV→JSON",
-      systemImageName: "doc.badge.arrow.up")
-    AppShortcut(
-      intent: Alist2DslIntent(),
-      phrases: ["Convert \(.applicationName) alist to DSL"],
-      shortTitle: "alist→DSL",
-      systemImageName: "arrow.right.doc.on.clipboard")
-    AppShortcut(
-      intent: RuninfoIntent(),
-      phrases: ["Show \(.applicationName) run info"],
-      shortTitle: "RunInfo",
-      systemImageName: "info.circle")
   }
 }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-  @AppStorage("cmdstanPath") private var cmdstanPath: String = ""
+  @AppStorage("serverURL") private var serverURL: String = ""
 
   var body: some View {
     VStack(alignment: .leading, spacing: 16) {
@@ -11,14 +11,14 @@ struct ContentView: View {
         .font(.subheadline)
         .foregroundStyle(.secondary)
       Divider()
-      LabeledContent("cmdstan path") {
+      LabeledContent("Server URL") {
         TextField(
-          "/Users/rob/Projects/StanSupport/cmdstan",
-          text: $cmdstanPath)
+          "http://127.0.0.1:8080",
+          text: $serverURL)
           .textFieldStyle(.roundedBorder)
           .font(.system(.body, design: .monospaced))
       }
-      Text("Leave blank to use $CMDSTAN or the default path above.")
+      Text("Leave blank to use the default http://127.0.0.1:8080. SwiftStanServer must be running.")
         .font(.caption)
         .foregroundStyle(.secondary)
     }

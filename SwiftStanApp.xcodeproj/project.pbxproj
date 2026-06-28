@@ -9,30 +9,57 @@
 /* Begin PBXBuildFile section */
 		AA0000000000000000000040 /* SwiftStanAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000020 /* SwiftStanAppApp.swift */; };
 		AA0000000000000000000041 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000021 /* ContentView.swift */; };
-		AA0000000000000000000042 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000022 /* AppSettings.swift */; };
-		AA0000000000000000000043 /* StanIntentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000023 /* StanIntentError.swift */; };
-		AA0000000000000000000044 /* CompileModelIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000024 /* CompileModelIntent.swift */; };
-		AA0000000000000000000045 /* SampleModelIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000025 /* SampleModelIntent.swift */; };
-		AA0000000000000000000046 /* RunUlamPipelineIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000026 /* RunUlamPipelineIntent.swift */; };
-		AA0000000000000000000047 /* GenerateStanCodeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000027 /* GenerateStanCodeIntent.swift */; };
-		AA0000000000000000000048 /* StanToAlistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000028 /* StanToAlistIntent.swift */; };
-		AA0000000000000000000049 /* SwiftStanShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000029 /* SwiftStanShortcuts.swift */; };
-		D46876812FEF3228002F0FD1 /* SwiftStan in Frameworks */ = {isa = PBXBuildFile; productRef = D46876802FEF3228002F0FD1 /* SwiftStan */; };
+		D43DEAE22FF17FC40038834F /* OpenAPIRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = D43DEAE12FF17FC40038834F /* OpenAPIRuntime */; };
+		D43DEAFA2FF180ED0038834F /* ServerSettings 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF82FF180ED0038834F /* ServerSettings 2.swift */; };
+		D43DEAFB2FF180ED0038834F /* Csv2JsonIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAE82FF180ED0038834F /* Csv2JsonIntent.swift */; };
+		D43DEAFC2FF180ED0038834F /* LaplaceIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAEB2FF180ED0038834F /* LaplaceIntent.swift */; };
+		D43DEAFD2FF180ED0038834F /* SampleModelIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF02FF180ED0038834F /* SampleModelIntent.swift */; };
+		D43DEAFE2FF180ED0038834F /* PathfinderIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAED2FF180ED0038834F /* PathfinderIntent.swift */; };
+		D43DEAFF2FF180ED0038834F /* GenerateStanCodeIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAEA2FF180ED0038834F /* GenerateStanCodeIntent.swift */; };
+		D43DEB002FF180ED0038834F /* StanClient 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF92FF180ED0038834F /* StanClient 2.swift */; };
+		D43DEB012FF180ED0038834F /* CompileModelIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAE72FF180ED0038834F /* CompileModelIntent.swift */; };
+		D43DEB022FF180ED0038834F /* Alist2DslIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAE62FF180ED0038834F /* Alist2DslIntent.swift */; };
+		D43DEB032FF180ED0038834F /* GeneratedQuantitiesIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAE92FF180ED0038834F /* GeneratedQuantitiesIntent.swift */; };
+		D43DEB042FF180ED0038834F /* RunUlamPipelineIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAEF2FF180ED0038834F /* RunUlamPipelineIntent.swift */; };
+		D43DEB052FF180ED0038834F /* RuninfoIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAEE2FF180ED0038834F /* RuninfoIntent.swift */; };
+		D43DEB062FF180ED0038834F /* StansummaryIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF22FF180ED0038834F /* StansummaryIntent.swift */; };
+		D43DEB072FF180ED0038834F /* SwiftStanShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF42FF180ED0038834F /* SwiftStanShortcuts.swift */; };
+		D43DEB082FF180ED0038834F /* StanIntentError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF12FF180ED0038834F /* StanIntentError.swift */; };
+		D43DEB092FF180ED0038834F /* StanToAlistIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAF32FF180ED0038834F /* StanToAlistIntent.swift */; };
+		D43DEB0A2FF180ED0038834F /* OptimizeModelIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEAEC2FF180ED0038834F /* OptimizeModelIntent.swift */; };
+		D43DEB0B2FF180ED0038834F /* openapi-generator-config 2.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D43DEAF72FF180ED0038834F /* openapi-generator-config 2.yaml */; };
+		D43DEB0C2FF180ED0038834F /* openapi 2.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D43DEAF62FF180ED0038834F /* openapi 2.yaml */; };
+		D43DEB0E2FF18A060038834F /* OpenAPIURLSession in Frameworks */ = {isa = PBXBuildFile; productRef = D43DEB0D2FF18A060038834F /* OpenAPIURLSession */; };
+		D43DEB112FF18A6A0038834F /* openapi-generator-config.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D43DEB102FF18A6A0038834F /* openapi-generator-config.yaml */; };
+		D43DEB122FF18A6A0038834F /* openapi.yaml in Resources */ = {isa = PBXBuildFile; fileRef = D43DEB0F2FF18A6A0038834F /* openapi.yaml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA0000000000000000000020 /* SwiftStanAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStanAppApp.swift; sourceTree = "<group>"; };
 		AA0000000000000000000021 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AA0000000000000000000022 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
-		AA0000000000000000000023 /* StanIntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StanIntentError.swift; sourceTree = "<group>"; };
-		AA0000000000000000000024 /* CompileModelIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompileModelIntent.swift; sourceTree = "<group>"; };
-		AA0000000000000000000025 /* SampleModelIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModelIntent.swift; sourceTree = "<group>"; };
-		AA0000000000000000000026 /* RunUlamPipelineIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunUlamPipelineIntent.swift; sourceTree = "<group>"; };
-		AA0000000000000000000027 /* GenerateStanCodeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateStanCodeIntent.swift; sourceTree = "<group>"; };
-		AA0000000000000000000028 /* StanToAlistIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StanToAlistIntent.swift; sourceTree = "<group>"; };
-		AA0000000000000000000029 /* SwiftStanShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStanShortcuts.swift; sourceTree = "<group>"; };
 		AA0000000000000000000030 /* SwiftStanApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftStanApp.entitlements; sourceTree = "<group>"; };
 		AA0000000000000000000031 /* SwiftStanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftStanApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D43DEAE62FF180ED0038834F /* Alist2DslIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alist2DslIntent.swift; sourceTree = "<group>"; };
+		D43DEAE72FF180ED0038834F /* CompileModelIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompileModelIntent.swift; sourceTree = "<group>"; };
+		D43DEAE82FF180ED0038834F /* Csv2JsonIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Csv2JsonIntent.swift; sourceTree = "<group>"; };
+		D43DEAE92FF180ED0038834F /* GeneratedQuantitiesIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedQuantitiesIntent.swift; sourceTree = "<group>"; };
+		D43DEAEA2FF180ED0038834F /* GenerateStanCodeIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateStanCodeIntent.swift; sourceTree = "<group>"; };
+		D43DEAEB2FF180ED0038834F /* LaplaceIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaplaceIntent.swift; sourceTree = "<group>"; };
+		D43DEAEC2FF180ED0038834F /* OptimizeModelIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptimizeModelIntent.swift; sourceTree = "<group>"; };
+		D43DEAED2FF180ED0038834F /* PathfinderIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathfinderIntent.swift; sourceTree = "<group>"; };
+		D43DEAEE2FF180ED0038834F /* RuninfoIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuninfoIntent.swift; sourceTree = "<group>"; };
+		D43DEAEF2FF180ED0038834F /* RunUlamPipelineIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunUlamPipelineIntent.swift; sourceTree = "<group>"; };
+		D43DEAF02FF180ED0038834F /* SampleModelIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleModelIntent.swift; sourceTree = "<group>"; };
+		D43DEAF12FF180ED0038834F /* StanIntentError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StanIntentError.swift; sourceTree = "<group>"; };
+		D43DEAF22FF180ED0038834F /* StansummaryIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StansummaryIntent.swift; sourceTree = "<group>"; };
+		D43DEAF32FF180ED0038834F /* StanToAlistIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StanToAlistIntent.swift; sourceTree = "<group>"; };
+		D43DEAF42FF180ED0038834F /* SwiftStanShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStanShortcuts.swift; sourceTree = "<group>"; };
+		D43DEAF62FF180ED0038834F /* openapi 2.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi 2.yaml"; sourceTree = "<group>"; };
+		D43DEAF72FF180ED0038834F /* openapi-generator-config 2.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config 2.yaml"; sourceTree = "<group>"; };
+		D43DEAF82FF180ED0038834F /* ServerSettings 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServerSettings 2.swift"; sourceTree = "<group>"; };
+		D43DEAF92FF180ED0038834F /* StanClient 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StanClient 2.swift"; sourceTree = "<group>"; };
+		D43DEB0F2FF18A6A0038834F /* openapi.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = openapi.yaml; sourceTree = "<group>"; };
+		D43DEB102FF18A6A0038834F /* openapi-generator-config.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "openapi-generator-config.yaml"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D46876812FEF3228002F0FD1 /* SwiftStan in Frameworks */,
+				D43DEB0E2FF18A060038834F /* OpenAPIURLSession in Frameworks */,
+				D43DEAE22FF17FC40038834F /* OpenAPIRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,9 +96,15 @@
 		AA0000000000000000000005 /* SwiftStanApp */ = {
 			isa = PBXGroup;
 			children = (
+				D43DEB0F2FF18A6A0038834F /* openapi.yaml */,
+				D43DEB102FF18A6A0038834F /* openapi-generator-config.yaml */,
+				D43DEAF52FF180ED0038834F /* Intents 2 */,
+				D43DEAF62FF180ED0038834F /* openapi 2.yaml */,
+				D43DEAF72FF180ED0038834F /* openapi-generator-config 2.yaml */,
+				D43DEAF82FF180ED0038834F /* ServerSettings 2.swift */,
+				D43DEAF92FF180ED0038834F /* StanClient 2.swift */,
 				AA0000000000000000000020 /* SwiftStanAppApp.swift */,
 				AA0000000000000000000021 /* ContentView.swift */,
-				AA0000000000000000000022 /* AppSettings.swift */,
 				AA0000000000000000000006 /* Intents */,
 				AA0000000000000000000030 /* SwiftStanApp.entitlements */,
 			);
@@ -80,13 +114,6 @@
 		AA0000000000000000000006 /* Intents */ = {
 			isa = PBXGroup;
 			children = (
-				AA0000000000000000000023 /* StanIntentError.swift */,
-				AA0000000000000000000024 /* CompileModelIntent.swift */,
-				AA0000000000000000000025 /* SampleModelIntent.swift */,
-				AA0000000000000000000026 /* RunUlamPipelineIntent.swift */,
-				AA0000000000000000000027 /* GenerateStanCodeIntent.swift */,
-				AA0000000000000000000028 /* StanToAlistIntent.swift */,
-				AA0000000000000000000029 /* SwiftStanShortcuts.swift */,
 			);
 			path = Intents;
 			sourceTree = "<group>";
@@ -96,6 +123,28 @@
 			children = (
 			);
 			name = Packages;
+			sourceTree = "<group>";
+		};
+		D43DEAF52FF180ED0038834F /* Intents 2 */ = {
+			isa = PBXGroup;
+			children = (
+				D43DEAE62FF180ED0038834F /* Alist2DslIntent.swift */,
+				D43DEAE72FF180ED0038834F /* CompileModelIntent.swift */,
+				D43DEAE82FF180ED0038834F /* Csv2JsonIntent.swift */,
+				D43DEAE92FF180ED0038834F /* GeneratedQuantitiesIntent.swift */,
+				D43DEAEA2FF180ED0038834F /* GenerateStanCodeIntent.swift */,
+				D43DEAEB2FF180ED0038834F /* LaplaceIntent.swift */,
+				D43DEAEC2FF180ED0038834F /* OptimizeModelIntent.swift */,
+				D43DEAED2FF180ED0038834F /* PathfinderIntent.swift */,
+				D43DEAEE2FF180ED0038834F /* RuninfoIntent.swift */,
+				D43DEAEF2FF180ED0038834F /* RunUlamPipelineIntent.swift */,
+				D43DEAF02FF180ED0038834F /* SampleModelIntent.swift */,
+				D43DEAF12FF180ED0038834F /* StanIntentError.swift */,
+				D43DEAF22FF180ED0038834F /* StansummaryIntent.swift */,
+				D43DEAF32FF180ED0038834F /* StanToAlistIntent.swift */,
+				D43DEAF42FF180ED0038834F /* SwiftStanShortcuts.swift */,
+			);
+			path = "Intents 2";
 			sourceTree = "<group>";
 		};
 		D468767C2FEF31E7002F0FD1 /* Frameworks */ = {
@@ -120,10 +169,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				D43DEAE52FF180B00038834F /* PBXTargetDependency */,
 			);
 			name = SwiftStanApp;
 			packageProductDependencies = (
-				D46876802FEF3228002F0FD1 /* SwiftStan */,
+				D43DEAE12FF17FC40038834F /* OpenAPIRuntime */,
+				D43DEB0D2FF18A060038834F /* OpenAPIURLSession */,
 			);
 			productName = SwiftStanApp;
 			productReference = AA0000000000000000000031 /* SwiftStanApp.app */;
@@ -137,7 +188,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 2700;
 				TargetAttributes = {
 					AA0000000000000000000002 = {
 						CreatedOnToolsVersion = 15.4;
@@ -154,7 +205,10 @@
 			);
 			mainGroup = AA0000000000000000000004;
 			packageReferences = (
-				D468767F2FEF3228002F0FD1 /* XCLocalSwiftPackageReference "../SwiftStan" */,
+				D43DEA7E2FF0BC610038834F /* XCLocalSwiftPackageReference "../SwiftStan" */,
+				D43DEADD2FF17F9C0038834F /* XCRemoteSwiftPackageReference "swift-openapi-generator" */,
+				D43DEAE02FF17FC40038834F /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */,
+				D43DEAE32FF180690038834F /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */,
 			);
 			productRefGroup = AA0000000000000000000003 /* Products */;
 			projectDirPath = "";
@@ -170,6 +224,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D43DEB112FF18A6A0038834F /* openapi-generator-config.yaml in Resources */,
+				D43DEB122FF18A6A0038834F /* openapi.yaml in Resources */,
+				D43DEB0B2FF180ED0038834F /* openapi-generator-config 2.yaml in Resources */,
+				D43DEB0C2FF180ED0038834F /* openapi 2.yaml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,18 +260,34 @@
 			files = (
 				AA0000000000000000000040 /* SwiftStanAppApp.swift in Sources */,
 				AA0000000000000000000041 /* ContentView.swift in Sources */,
-				AA0000000000000000000042 /* AppSettings.swift in Sources */,
-				AA0000000000000000000043 /* StanIntentError.swift in Sources */,
-				AA0000000000000000000044 /* CompileModelIntent.swift in Sources */,
-				AA0000000000000000000045 /* SampleModelIntent.swift in Sources */,
-				AA0000000000000000000046 /* RunUlamPipelineIntent.swift in Sources */,
-				AA0000000000000000000047 /* GenerateStanCodeIntent.swift in Sources */,
-				AA0000000000000000000048 /* StanToAlistIntent.swift in Sources */,
-				AA0000000000000000000049 /* SwiftStanShortcuts.swift in Sources */,
+				D43DEAFA2FF180ED0038834F /* ServerSettings 2.swift in Sources */,
+				D43DEAFB2FF180ED0038834F /* Csv2JsonIntent.swift in Sources */,
+				D43DEAFC2FF180ED0038834F /* LaplaceIntent.swift in Sources */,
+				D43DEAFD2FF180ED0038834F /* SampleModelIntent.swift in Sources */,
+				D43DEAFE2FF180ED0038834F /* PathfinderIntent.swift in Sources */,
+				D43DEAFF2FF180ED0038834F /* GenerateStanCodeIntent.swift in Sources */,
+				D43DEB002FF180ED0038834F /* StanClient 2.swift in Sources */,
+				D43DEB012FF180ED0038834F /* CompileModelIntent.swift in Sources */,
+				D43DEB022FF180ED0038834F /* Alist2DslIntent.swift in Sources */,
+				D43DEB032FF180ED0038834F /* GeneratedQuantitiesIntent.swift in Sources */,
+				D43DEB042FF180ED0038834F /* RunUlamPipelineIntent.swift in Sources */,
+				D43DEB052FF180ED0038834F /* RuninfoIntent.swift in Sources */,
+				D43DEB062FF180ED0038834F /* StansummaryIntent.swift in Sources */,
+				D43DEB072FF180ED0038834F /* SwiftStanShortcuts.swift in Sources */,
+				D43DEB082FF180ED0038834F /* StanIntentError.swift in Sources */,
+				D43DEB092FF180ED0038834F /* StanToAlistIntent.swift in Sources */,
+				D43DEB0A2FF180ED0038834F /* OptimizeModelIntent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D43DEAE52FF180B00038834F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = D43DEAE42FF180B00038834F /* OpenAPIGenerator */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AA0000000000000000000060 /* Debug */ = {
@@ -249,9 +323,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -270,6 +346,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -308,9 +385,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -321,6 +400,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_FAST_MATH = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
@@ -333,7 +413,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -346,8 +428,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goedman.SwiftStanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -358,7 +443,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -371,8 +458,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.goedman.SwiftStanApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -400,16 +490,54 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		D468767F2FEF3228002F0FD1 /* XCLocalSwiftPackageReference "../SwiftStan" */ = {
+		D43DEA7E2FF0BC610038834F /* XCLocalSwiftPackageReference "../SwiftStan" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = ../SwiftStan;
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		D43DEADD2FF17F9C0038834F /* XCRemoteSwiftPackageReference "swift-openapi-generator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-generator";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.12.2;
+			};
+		};
+		D43DEAE02FF17FC40038834F /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-runtime";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.12.0;
+			};
+		};
+		D43DEAE32FF180690038834F /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-openapi-urlsession";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		D46876802FEF3228002F0FD1 /* SwiftStan */ = {
+		D43DEAE12FF17FC40038834F /* OpenAPIRuntime */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = SwiftStan;
+			package = D43DEAE02FF17FC40038834F /* XCRemoteSwiftPackageReference "swift-openapi-runtime" */;
+			productName = OpenAPIRuntime;
+		};
+		D43DEAE42FF180B00038834F /* OpenAPIGenerator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D43DEADD2FF17F9C0038834F /* XCRemoteSwiftPackageReference "swift-openapi-generator" */;
+			productName = "plugin:OpenAPIGenerator";
+		};
+		D43DEB0D2FF18A060038834F /* OpenAPIURLSession */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D43DEAE32FF180690038834F /* XCRemoteSwiftPackageReference "swift-openapi-urlsession" */;
+			productName = OpenAPIURLSession;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
