@@ -3,7 +3,6 @@ import SwiftUI
 struct AdvancedSettingsView: View {
     @Bindable var viewModel: RunViewModel
     @Environment(\.dismiss) private var dismiss
-    @AppStorage("stanCases") private var stanCases: String = "StanCases"
 
     var body: some View {
         NavigationStack {
@@ -18,28 +17,6 @@ struct AdvancedSettingsView: View {
                         numField("Seed",           $viewModel.seedText,         hint: "random")
                         numField("Adapt Delta",    $viewModel.adaptDeltaText,   hint: "0.8")
                         numField("Max Tree Depth", $viewModel.maxTreedepthText, hint: "10")
-                    }
-                }
-                Section("Environment") {
-                    LabeledContent("Cmdstan path:") {
-                        TextField("", text: $viewModel.cmdstanPath)
-                            .font(.system(.body, design: .monospaced))
-                    }
-                    LabeledContent("Stan Cases:") {
-                        TextField("StanCases", text: $stanCases)
-                            .font(.system(.body, design: .monospaced))
-#if os(macOS)
-                            .textFieldStyle(.roundedBorder)
-#endif
-                    }
-                    if !viewModel.stanCasesRoot.isEmpty {
-                        LabeledContent("Resolved root:") {
-                            Text(viewModel.stanCasesRoot)
-                                .font(.system(.body, design: .monospaced))
-                                .foregroundStyle(.secondary)
-                                .textSelection(.enabled)
-                                .frame(maxWidth: .infinity, alignment: .trailing)
-                        }
                     }
                 }
             }

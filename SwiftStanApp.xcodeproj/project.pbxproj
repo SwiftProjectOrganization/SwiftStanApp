@@ -65,6 +65,9 @@
 		D43DEB302FF2088D0038834F /* StanCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StanCommandView.swift; sourceTree = "<group>"; };
 		D43DEB452FF2B29A0038834F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		D43DEB632FF2E3670038834F /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
+		D43DEB982FF42CC10038834F /* CLAUDE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLAUDE.md; sourceTree = "<group>"; };
+		D43DEB992FF42CC10038834F /* StructuredSamplerParameters.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StructuredSamplerParameters.md; sourceTree = "<group>"; };
+		D43DEB9B2FF42CC10038834F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,9 @@
 		AA0000000000000000000004 = {
 			isa = PBXGroup;
 			children = (
+				D43DEB982FF42CC10038834F /* CLAUDE.md */,
+				D43DEB9A2FF42CC10038834F /* Docs */,
+				D43DEB9B2FF42CC10038834F /* README.md */,
 				AA0000000000000000000005 /* SwiftStanApp */,
 				AA0000000000000000000007 /* Packages */,
 				D468767C2FEF31E7002F0FD1 /* Frameworks */,
@@ -145,6 +151,14 @@
 				D43DEAF42FF180ED0038834F /* SwiftStanShortcuts.swift */,
 			);
 			path = Intents;
+			sourceTree = "<group>";
+		};
+		D43DEB9A2FF42CC10038834F /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				D43DEB992FF42CC10038834F /* StructuredSamplerParameters.md */,
+			);
+			path = Docs;
 			sourceTree = "<group>";
 		};
 		D468767C2FEF31E7002F0FD1 /* Frameworks */ = {

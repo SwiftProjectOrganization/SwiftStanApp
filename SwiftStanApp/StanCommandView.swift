@@ -4,12 +4,14 @@ struct StanCommandView: View {
     @State private var viewModel = RunViewModel()
     @State private var showingSettings = false
     @State private var showingAdvanced = false
+    @AppStorage("stanCases") private var stanCases: String = "StanCases"
+    @FocusState private var casesFieldFocused: Bool
 
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
                 Form {
-                    Section {
+                    Section("Model selection and command:") {
                         Picker("Command", selection: $viewModel.command) {
                             ForEach(StanCommand.allCases) { cmd in
                                 Text(cmd.rawValue).tag(cmd)
@@ -38,9 +40,24 @@ struct StanCommandView: View {
                                 .foregroundStyle(.secondary)
                         }
                     }
-                    commandParameters
+                    Section("Case directory selection:") {
+                        TextField("StanCases", text: $stanCases)
+                            .focused($casesFieldFocused)
+                            .onSubmit { Task { await viewModel.loadModels() } }
+#if os(macOS)
+                            .textFieldStyle(.roundedBorder)
+#endif
+                            .font(.system(.body, design: .monospaced))
+                    }
+                    Section("Stan parameters:") {
+                        commandParameters
+                        Button("Advanced") { showingAdvanced = true }
+                    }
                 }
                 .formStyle(.grouped)
+                .onChange(of: casesFieldFocused) { _, focused in
+                    if !focused { Task { await viewModel.loadModels() } }
+                }
 
                 Divider()
                 runBar
@@ -48,7 +65,7 @@ struct StanCommandView: View {
 #if os(macOS)
             .frame(minWidth: 560, minHeight: 500)
 #endif
-            .navigationTitle("SwiftStan")
+            .navigationTitle("SwiftStanApp")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button {
@@ -72,26 +89,18 @@ struct StanCommandView: View {
     private var commandParameters: some View {
         switch viewModel.command {
         case .sample:
-            Section("Sampling Parameters") {
-                numField("Samples", $viewModel.numSamplesText, hint: "1000")
-                numField("Chains",  $viewModel.numChainsText,  hint: "4")
-            }
+            numField("Samples", $viewModel.numSamplesText, hint: "1000")
+            numField("Chains",  $viewModel.numChainsText,  hint: "4")
         case .compile:
-            Section("Compile Options") {
-                Toggle("Force Recompile", isOn: $viewModel.force)
-                Toggle("Install Example", isOn: $viewModel.install)
-                Toggle("Verbose", isOn: $viewModel.verbose)
-            }
+            Toggle("Force Recompile", isOn: $viewModel.force)
+            Toggle("Install Example", isOn: $viewModel.install)
+            Toggle("Verbose", isOn: $viewModel.verbose)
         case .stan2alist, .ulam:
-            Section("Options") {
-                Toggle("Force", isOn: $viewModel.force)
-                Toggle("Verbose", isOn: $viewModel.verbose)
-            }
+            Toggle("Force", isOn: $viewModel.force)
+            Toggle("Verbose", isOn: $viewModel.verbose)
         case .optimize, .pathfinder, .laplace, .generatedQuantities, .stansummary,
              .csv2json, .alist2dsl, .stancode, .runinfo:
-            Section("Options") {
-                Toggle("Verbose", isOn: $viewModel.verbose)
-            }
+            Toggle("Verbose", isOn: $viewModel.verbose)
         }
     }
 
@@ -103,8 +112,6 @@ struct StanCommandView: View {
                     Button("Run") { Task { await viewModel.run() } }
                         .buttonStyle(.glassProminent)
                         .disabled(viewModel.isRunning)
-                    Button("Advanced") { showingAdvanced = true }
-                        .buttonStyle(.glass)
                     if viewModel.isRunning {
                         ProgressView().controlSize(.small)
                         Text("Running\u{2026}").foregroundStyle(.secondary)

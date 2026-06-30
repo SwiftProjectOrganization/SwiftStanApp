@@ -8,13 +8,13 @@ enum StanCommand: String, CaseIterable, Identifiable {
     case pathfinder = "Pathfinder"
     case laplace = "Laplace"
     case generatedQuantities = "Generated Quantities"
-    case stansummary = "Stan Summary"
+    case stansummary = "Stansummary"
     case csv2json = "CSV to JSON"
-    case alist2dsl = "alist to DSL"
-    case stancode = "Generate Stan Code"
+    case ulam = "Ulam"
+    case stancode = "Stancode"
     case runinfo = "Run Info"
+    case alist2dsl = "Alist to DSL"
     case stan2alist = "Stan to alist"
-    case ulam = "Ulam Pipeline"
 
     var id: String { rawValue }
 }
@@ -34,7 +34,6 @@ final class RunViewModel {
     // Common
     var model: String = "bernoulli"
     var verbose: Bool = false
-    var cmdstanPath: String = ""
 
     // Sample-specific
     var nosummary: Bool = false
@@ -80,8 +79,8 @@ final class RunViewModel {
 
     func fetchHealth() async {
         guard let health = try? await StanService().health() else { return }
-        if cmdstanPath.isEmpty {
-            cmdstanPath = health.cmdstan
+        if ServerSettings.cmdstan().isEmpty {
+            ServerSettings.setCmdstan(health.cmdstan)
         }
         await loadModels()
     }
@@ -142,7 +141,8 @@ final class RunViewModel {
     }
 
     private var parsedCmdstan: String? {
-        cmdstanPath.isEmpty ? nil : cmdstanPath
+        let value = ServerSettings.cmdstan()
+        return value.isEmpty ? nil : value
     }
 
     private var sampleParams: SampleParams {
