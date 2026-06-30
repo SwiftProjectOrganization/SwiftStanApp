@@ -8,9 +8,9 @@ It will also declare the methods as **App Intents**, making them available from 
 
 ## SwiftStan related repositories (the '*SwiftStan suite*')
 
-The [SwiftStanApp](https://github.com/SwiftProjectOrganization/SwiftStanApp) is a thin HTTP client of [SwiftStanServer](https://github.com/SwiftProjectOrganization/SwiftStanServer). It contains no Stan logic itself — all computation happens on the server based on the [SwiftStanLibrary](https://github.com/SwiftProjectOrganization/SwiftStanLibrary). The SwiftStanLibrary in turn is based on the [SwiftStan](https://github.com/SwiftProjectOrganization/SwiftStan) CLI. The CLI also includes a second ulam pipeline using an intermediate DSL that requires `swiftc` which is not available on iOS platforms abd thus was dropped from the SwiftStanLibrary SPM package.
+The [SwiftStanApp](https://github.com/SwiftProjectOrganization/SwiftStanApp) is a thin HTTP client of [SwiftStanServer](https://github.com/SwiftProjectOrganization/SwiftStanServer). It contains no Stan logic itself — all computation happens on the server based on the [SwiftStanLibrary](https://github.com/SwiftProjectOrganization/SwiftStanLibrary). The SwiftStanLibrary in turn is based on the [SwiftStan](https://github.com/SwiftProjectOrganization/SwiftStan) CLI. The CLI also includes a second ulam pipeline using an intermediate DSL that requires `swiftc. As`swiftc is not available on iOS platforms that functionality was dropped from the SwiftStanLibrary SPM package.
 
-Ultimately I will have a Mac Mini M6 running the SwiftStanServer and use tools as described [here](https://medium.com/macoclock/17-unexpected-uses-of-mac-mini-most-people-dont-know-about-00edd82d3ec8) to run Stan models when on the road.
+Ultimately my personal setup will have a Mac Mini M6 running the SwiftStanServer and use tools as described [here](https://medium.com/macoclock/17-unexpected-uses-of-mac-mini-most-people-dont-know-about-00edd82d3ec8) to run Stan models when on the road.
 
 
 ## Requirements
