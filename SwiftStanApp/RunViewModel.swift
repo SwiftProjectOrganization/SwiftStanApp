@@ -89,11 +89,13 @@ final class RunViewModel {
     func loadModels() async {
         do {
             let result = try await StanService().models()
+            let rootChanged = !stanCasesRoot.isEmpty && stanCasesRoot != result.root
             stanCasesRoot = result.root
             availableModels = result.models
             modelsState = .loaded
-            if !availableModels.contains(model) {
+            if rootChanged || !availableModels.contains(model) {
                 model = availableModels.first ?? ""
+                modelPrefix = ""
             }
         } catch {
             availableModels = []
