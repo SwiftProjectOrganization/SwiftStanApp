@@ -33,6 +33,7 @@
 		D43DEB2A2FF208680038834F /* StanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEB292FF208680038834F /* StanService.swift */; };
 		D43DEB2D2FF208760038834F /* RunViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEB2C2FF208760038834F /* RunViewModel.swift */; };
 		D43DEB312FF2088D0038834F /* StanCommandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEB302FF2088D0038834F /* StanCommandView.swift */; };
+		D43DEB642FF2E3670038834F /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43DEB632FF2E3670038834F /* AdvancedSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		D43DEB2C2FF208760038834F /* RunViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunViewModel.swift; sourceTree = "<group>"; };
 		D43DEB302FF2088D0038834F /* StanCommandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StanCommandView.swift; sourceTree = "<group>"; };
 		D43DEB452FF2B29A0038834F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		D43DEB632FF2E3670038834F /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				D43DEB292FF208680038834F /* StanService.swift */,
 				D43DEB2C2FF208760038834F /* RunViewModel.swift */,
 				D43DEB302FF2088D0038834F /* StanCommandView.swift */,
+				D43DEB632FF2E3670038834F /* AdvancedSettingsView.swift */,
 			);
 			path = SwiftStanApp;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				D43DEB012FF180ED0038834F /* CompileModelIntent.swift in Sources */,
 				D43DEB312FF2088D0038834F /* StanCommandView.swift in Sources */,
 				D43DEB022FF180ED0038834F /* Alist2DslIntent.swift in Sources */,
+				D43DEB642FF2E3670038834F /* AdvancedSettingsView.swift in Sources */,
 				D43DEB032FF180ED0038834F /* GeneratedQuantitiesIntent.swift in Sources */,
 				D43DEB042FF180ED0038834F /* RunUlamPipelineIntent.swift in Sources */,
 				D43DEB052FF180ED0038834F /* RuninfoIntent.swift in Sources */,

@@ -83,9 +83,17 @@ struct StanService {
         return ServerHealth(cmdstan: j.cmdstan, stanCases: j.stanCases)
     }
 
+    func models() async throws -> (root: String, models: [String]) {
+        let r = try await client.models(.init(body: .json(.init(
+            stanCases: ServerSettings.stanCases()))))
+        let j = try r.ok.body.json
+        return (j.root, j.models)
+    }
+
     func sample(_ p: SampleParams) async throws -> StanResult {
         let r = try await client.sample(.init(body: .json(.init(
             model: p.model.lowercased(), arguments: p.arguments, cmdstan: p.cmdstan,
+            stanCases: ServerSettings.stanCases(),
             verbose: p.verbose, install: p.install, nosummary: p.nosummary,
             numSamples: p.numSamples, numWarmup: p.numWarmup, numChains: p.numChains,
             thin: p.thin, seed: p.seed, adaptDelta: p.adaptDelta, maxTreedepth: p.maxTreedepth))))
@@ -96,6 +104,7 @@ struct StanService {
     func compile(_ p: CompileParams) async throws -> StanResult {
         let r = try await client.compile(.init(body: .json(.init(
             model: p.model.lowercased(), arguments: p.arguments, cmdstan: p.cmdstan,
+            stanCases: ServerSettings.stanCases(),
             verbose: p.verbose, install: p.install, force: p.force))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
@@ -104,7 +113,8 @@ struct StanService {
     func optimize(_ p: CmdstanParams) async throws -> StanResult {
         let r = try await client.optimize(.init(body: .json(.init(
             model: p.model.lowercased(), arguments: p.arguments,
-            cmdstan: p.cmdstan, verbose: p.verbose))))
+            cmdstan: p.cmdstan, stanCases: ServerSettings.stanCases(),
+            verbose: p.verbose))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
     }
@@ -112,7 +122,8 @@ struct StanService {
     func pathfinder(_ p: CmdstanParams) async throws -> StanResult {
         let r = try await client.pathfinder(.init(body: .json(.init(
             model: p.model.lowercased(), arguments: p.arguments,
-            cmdstan: p.cmdstan, verbose: p.verbose))))
+            cmdstan: p.cmdstan, stanCases: ServerSettings.stanCases(),
+            verbose: p.verbose))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
     }
@@ -120,7 +131,8 @@ struct StanService {
     func laplace(_ p: CmdstanParams) async throws -> StanResult {
         let r = try await client.laplace(.init(body: .json(.init(
             model: p.model.lowercased(), arguments: p.arguments,
-            cmdstan: p.cmdstan, verbose: p.verbose))))
+            cmdstan: p.cmdstan, stanCases: ServerSettings.stanCases(),
+            verbose: p.verbose))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
     }
@@ -128,7 +140,8 @@ struct StanService {
     func generatedQuantities(_ p: CmdstanParams) async throws -> StanResult {
         let r = try await client.generatedQuantities(.init(body: .json(.init(
             model: p.model.lowercased(), arguments: p.arguments,
-            cmdstan: p.cmdstan, verbose: p.verbose))))
+            cmdstan: p.cmdstan, stanCases: ServerSettings.stanCases(),
+            verbose: p.verbose))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
     }
@@ -136,35 +149,40 @@ struct StanService {
     func stansummary(_ p: CmdstanParams) async throws -> StanResult {
         let r = try await client.stansummary(.init(body: .json(.init(
             model: p.model.lowercased(), arguments: p.arguments,
-            cmdstan: p.cmdstan, verbose: p.verbose))))
+            cmdstan: p.cmdstan, stanCases: ServerSettings.stanCases(),
+            verbose: p.verbose))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
     }
 
     func csv2json(_ p: FileParams) async throws -> StanResult {
         let r = try await client.csv2json(.init(body: .json(.init(
-            model: p.model.lowercased(), verbose: p.verbose))))
+            model: p.model.lowercased(), stanCases: ServerSettings.stanCases(),
+            verbose: p.verbose))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
     }
 
     func alist2dsl(_ p: FileParams) async throws -> StanResult {
         let r = try await client.alist2dsl(.init(body: .json(.init(
-            model: p.model.lowercased(), verbose: p.verbose))))
+            model: p.model.lowercased(), stanCases: ServerSettings.stanCases(),
+            verbose: p.verbose))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
     }
 
     func stancode(_ p: FileParams) async throws -> StanResult {
         let r = try await client.stancode(.init(body: .json(.init(
-            model: p.model.lowercased(), verbose: p.verbose))))
+            model: p.model.lowercased(), stanCases: ServerSettings.stanCases(),
+            verbose: p.verbose))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
     }
 
     func runinfo(_ p: FileParams) async throws -> StanResult {
         let r = try await client.runinfo(.init(body: .json(.init(
-            model: p.model.lowercased(), verbose: p.verbose))))
+            model: p.model.lowercased(), stanCases: ServerSettings.stanCases(),
+            verbose: p.verbose))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
     }
@@ -172,6 +190,7 @@ struct StanService {
     func ulam(_ p: UlamParams) async throws -> StanResult {
         let r = try await client.ulam(.init(body: .json(.init(
             model: p.model.lowercased(), arguments: p.arguments, cmdstan: p.cmdstan,
+            stanCases: ServerSettings.stanCases(),
             verbose: p.verbose, force: p.force))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
@@ -179,7 +198,8 @@ struct StanService {
 
     func stan2alist(_ p: Stan2AlistParams) async throws -> StanResult {
         let r = try await client.stan2alist(.init(body: .json(.init(
-            model: p.model.lowercased(), verbose: p.verbose, force: p.force))))
+            model: p.model.lowercased(), stanCases: ServerSettings.stanCases(),
+            verbose: p.verbose, force: p.force))))
         let j = try r.ok.body.json
         return StanResult(status: j.status, error: j.error, outputPath: j.outputPath)
     }

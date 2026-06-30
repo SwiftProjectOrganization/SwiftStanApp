@@ -52,15 +52,52 @@ final class RunViewModel {
 
     var phase: RunPhase = .idle
 
+    // Model list
+    enum ModelsLoadState { case notLoaded, loaded, failed }
+    var modelsState: ModelsLoadState = .notLoaded
+    var availableModels: [String] = []
+    var stanCasesRoot: String = ""
+    var modelPrefix: String = ""
+
+    var casename: String { ServerSettings.stanCases() }
+
     var isRunning: Bool {
         if case .running = phase { return true }
         return false
+    }
+
+    var filteredModels: [String] {
+        let p = modelPrefix.trimmingCharacters(in: .whitespaces).lowercased()
+        guard !p.isEmpty else { return availableModels }
+        return availableModels.filter { $0.lowercased().hasPrefix(p) }
+    }
+
+    var modelOptions: [String] {
+        var opts = filteredModels
+        if !opts.contains(model) { opts.insert(model, at: 0) }
+        return opts
     }
 
     func fetchHealth() async {
         guard let health = try? await StanService().health() else { return }
         if cmdstanPath.isEmpty {
             cmdstanPath = health.cmdstan
+        }
+        await loadModels()
+    }
+
+    func loadModels() async {
+        do {
+            let result = try await StanService().models()
+            stanCasesRoot = result.root
+            availableModels = result.models
+            modelsState = .loaded
+            if !availableModels.contains(model) {
+                model = availableModels.first ?? ""
+            }
+        } catch {
+            availableModels = []
+            modelsState = .failed
         }
     }
 

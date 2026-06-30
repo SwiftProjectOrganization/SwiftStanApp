@@ -7,5 +7,7 @@
 		<key>NSAllowsLocalNetworking</key>
 		<true/>
 	</dict>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>SwiftStan connects to the local SwiftStanServer to compile and run Stan models.</string>
 </dict>
 </plist>

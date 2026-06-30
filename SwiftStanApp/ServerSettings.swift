@@ -6,4 +6,9 @@ enum ServerSettings {
     let urlString = stored.isEmpty ? "http://127.0.0.1:8080" : stored
     return URL(string: urlString) ?? URL(string: "http://127.0.0.1:8080")!
   }
+
+  static func stanCases() -> String {
+    let stored = UserDefaults.standard.string(forKey: "stanCases") ?? ""
+    return stored.isEmpty ? "StanCases" : stored
+  }
 }

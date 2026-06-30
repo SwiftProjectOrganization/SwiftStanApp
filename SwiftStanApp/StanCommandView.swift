@@ -3,6 +3,7 @@ import SwiftUI
 struct StanCommandView: View {
     @State private var viewModel = RunViewModel()
     @State private var showingSettings = false
+    @State private var showingAdvanced = false
 
     var body: some View {
         NavigationStack {
@@ -14,15 +15,30 @@ struct StanCommandView: View {
                                 Text(cmd.rawValue).tag(cmd)
                             }
                         }
-                        TextField("Model", text: $viewModel.model)
-                    }
-                    commandParameters
-                    Section("Advanced") {
-                        LabeledContent("Cmdstan path:") {
-                            TextField("", text: $viewModel.cmdstanPath)
-                                .font(.system(.body, design: .monospaced))
+                        if !viewModel.availableModels.isEmpty {
+                            HStack {
+                                Text("Starts with:")
+                                    .foregroundStyle(.secondary)
+                                TextField("", text: $viewModel.modelPrefix)
+                                    .textFieldStyle(.roundedBorder)
+                                    .frame(maxWidth: 140)
+                                Spacer()
+                                Picker("Model", selection: $viewModel.model) {
+                                    ForEach(viewModel.modelOptions, id: \.self) { name in
+                                        Text(name).tag(name)
+                                    }
+                                }
+                            }
+                        } else if viewModel.modelsState == .failed {
+                            Label("Can't reach SwiftStanServer", systemImage: "wifi.slash")
+                                .foregroundStyle(.secondary)
+                        } else if viewModel.modelsState == .loaded {
+                            Label("'\(viewModel.casename)' contains no models",
+                                  systemImage: "folder.badge.questionmark")
+                                .foregroundStyle(.secondary)
                         }
                     }
+                    commandParameters
                 }
                 .formStyle(.grouped)
 
@@ -46,6 +62,9 @@ struct StanCommandView: View {
         .sheet(isPresented: $showingSettings) {
             SettingsView()
         }
+        .sheet(isPresented: $showingAdvanced, onDismiss: { Task { await viewModel.loadModels() } }) {
+            AdvancedSettingsView(viewModel: viewModel)
+        }
         .task { await viewModel.fetchHealth() }
     }
 
@@ -54,16 +73,8 @@ struct StanCommandView: View {
         switch viewModel.command {
         case .sample:
             Section("Sampling Parameters") {
-                Toggle("No Summary", isOn: $viewModel.nosummary)
-                Toggle("Install Example", isOn: $viewModel.install)
-                Toggle("Verbose", isOn: $viewModel.verbose)
-                numField("Samples",       $viewModel.numSamplesText,   hint: "1000")
-                numField("Warmup",        $viewModel.numWarmupText,    hint: "1000")
-                numField("Chains",        $viewModel.numChainsText,    hint: "4")
-                numField("Thin",          $viewModel.thinText,         hint: "1")
-                numField("Seed",          $viewModel.seedText,         hint: "random")
-                numField("Adapt Delta",   $viewModel.adaptDeltaText,   hint: "0.8")
-                numField("Max Tree Depth",$viewModel.maxTreedepthText, hint: "10")
+                numField("Samples", $viewModel.numSamplesText, hint: "1000")
+                numField("Chains",  $viewModel.numChainsText,  hint: "4")
             }
         case .compile:
             Section("Compile Options") {
@@ -92,6 +103,8 @@ struct StanCommandView: View {
                     Button("Run") { Task { await viewModel.run() } }
                         .buttonStyle(.glassProminent)
                         .disabled(viewModel.isRunning)
+                    Button("Advanced") { showingAdvanced = true }
+                        .buttonStyle(.glass)
                     if viewModel.isRunning {
                         ProgressView().controlSize(.small)
                         Text("Running\u{2026}").foregroundStyle(.secondary)
