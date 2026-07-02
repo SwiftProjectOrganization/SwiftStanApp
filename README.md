@@ -2,23 +2,25 @@
 
 ## Purpose
 
-A macOS app that exposes [cmdstan](https://mc-stan.org/users/interfaces/cmdstan) methods from a MacOS or iOS clients. It also supports an experimental port of the ulam() R method in [Statistical Rethinking](https://xcelab.net/rm/) and it's supporting R packade `rethinking`.
+A macOS app that exposes [cmdstan](https://mc-stan.org/users/interfaces/cmdstan) methods from MacOS or iOS clients. It also supports an experimental port of the ulam() R method in [Statistical Rethinking](https://xcelab.net/rm/) and it's supporting R packade `rethinking`.
 
-It will also declare the methods as **App Intents**, making them available from Shortcuts, Siri, and Spotlight.
+It will also declare a subset of the methods as **App Intents**, making them available from Shortcuts, Siri, and Spotlight.
 
-## SwiftStan related repositories (the '*SwiftStan suite*')
+## SwiftStan related repositories (the 'SwiftStan suite')
 
-The [SwiftStanApp](https://github.com/SwiftProjectOrganization/SwiftStanApp) is a thin HTTP client of [SwiftStanServer](https://github.com/SwiftProjectOrganization/SwiftStanServer). It contains no Stan logic itself — all computation happens on the server based on the [SwiftStanLibrary](https://github.com/SwiftProjectOrganization/SwiftStanLibrary). The SwiftStanLibrary in turn is based on the [SwiftStan](https://github.com/SwiftProjectOrganization/SwiftStan) CLI. The CLI also includes a second ulam pipeline using an intermediate DSL that requires `swiftc. As`swiftc is not available on iOS platforms that functionality was dropped from the SwiftStanLibrary SPM package.
+The [SwiftStanApp](https://github.com/SwiftProjectOrganization/SwiftStanApp) is a thin HTTP client of [SwiftStanServer](https://github.com/SwiftProjectOrganization/SwiftStanServer). The SwiftStanServer uses the [SwiftStanLibrary](https://github.com/SwiftProjectOrganization/SwiftStanLibrary) to use the capabilities of `make` and `cmdstan`. As stated above, the SwiftStanApp is a MacOS or IOS client, the SwiftStanServer + SwiftStanLibrary + cmdstan run on a single MacOS system.
 
-Ultimately my personal setup will have a Mac Mini M6 running the SwiftStanServer and use tools as described [here](https://medium.com/macoclock/17-unexpected-uses-of-mac-mini-most-people-dont-know-about-00edd82d3ec8) to run Stan models when on the road.
+The SwiftStanLibrary is based on the [SwiftStan CLI](https://github.com/SwiftProjectOrganization/SwiftStan). The CLI also includes a second ulam pipeline using an intermediate DSL that requires `swiftc`. As swiftc is not available on iOS platforms that functionality was dropped from the SwiftStanLibrary SPM package.
 
+Ultimately my personal dream setup will have a Mac Mini M6 running the SwiftStanServer and use tools, for example as suggested [here](https://medium.com/macoclock/17-unexpected-uses-of-mac-mini-most-people-dont-know-about-00edd82d3ec8) (`YMMV!`), to run Stan models when on the road.
 
 ## Requirements
 
-- macOS 27.0
-- [SwiftStanServer](../SwiftStanServer) running (default: `http://127.0.0.1:8080`)
-- Xcode 26+ (to build)
-- The SwiftStan suite depends on the availability of a shared (iCloud based) ~/Documents directory where models, data and results are stored
+- macOS 27.0 + Xcode 27.0
+- SwiftStanServer
+- cmdstan
+
+The workflow envisioned in the SwiftStan suite depends on the availability of a shared (e.g. iCloud based) ~/Documents directory where models, data and results are stored. 
 
 ## Building
 
@@ -44,7 +46,8 @@ Launch the app and enter the server URL in the text field (leave blank for the d
 | CSV to JSON | "Convert .csv to .json" | Convert .csv + .stan to a .data.json file|
 | Stan to Alist | ".stan -> .alist.r" | Convert .stan to .alist.r format |
 | Alist to DSL | ".alist.r -> DSL" | Convert Alist to DSL format |
-| Runinfo | "Read .config.json' | Extract metadata from a cmdstan run |
+| Runinfo | "Read .config.json" | Extract metadata from a cmdstan run |
+| Stancases | "Show <Stan_Cases>" | Use `swiftstan stancases SR2Cases` to set <Stan_Cases> |
 
 All commands operate on  a `model` parameter (default: `bernoulli`) matching a subdirectory under `~/Documents/<StanCases>`. The parameter `<StanCases>` is set in the main UI window of SwiftStanApp.
 
@@ -55,7 +58,6 @@ Shortcuts / Siri / Spotlight
          │  AppIntent.perform()
          ▼
   SwiftStanApp          ← this repo
-   (Hummingbird)
    (OpenAPI client)
          │  HTTP POST /v1/<op>
          ▼
